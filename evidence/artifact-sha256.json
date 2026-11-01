@@ -77,9 +77,9 @@
   "tests/web.test.mjs": "45d08a01610ec821d52c584ca94fef619bb1cfc78e42f5253e0adbecc7492046",
   "web/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "web/algorithm.js": "e2ff1a3c06d56ca8233cac72140e775d9f7e8f5a24eb8f9bf60d7d07fa2edeab",
-  "web/app.js": "270c7888f599c97271abf0bd4da23c5788387dae2ebc9e89aef1e4801bcd72dd",
+  "web/app.js": "6f4b03743eafbc55da27832c098af2ab7b96bb106f9f130edb947abf74591402",
   "web/icon.svg": "5e1d74ccd625658007fa9ca5ee6ab05fda6cd95f00f949416cbac464ad477e91",
-  "web/index.html": "966e9fc88e231b514fd5e4952e99528ecc105f499fa35f1c480eeaff5b4b9c84",
+  "web/index.html": "c248376659710b1d6da6e86cc2d30fcf42b0896724a3943cbd7524521ecf7802",
   "web/md5.js": "2c621ab56c9704a64655bc342c1c4238e7bc6adf6c1f7c0ee7a7dc9dcf822e06",
   "web/styles.css": "01a450502d7dee025f1d57b8bf1b972f57d2f06cae07e2cee6299a9cbecb2412"
 }

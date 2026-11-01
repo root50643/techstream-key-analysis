@@ -1,4 +1,4 @@
-import { generateKey, localInputToIssued, toLocalInput, ParameterError } from "./algorithm.js";
+import { generateKey, localInputToIssued, toLocalInput, ParameterError } from "./algorithm.js?v=english-1";
 
 const $ = id => document.getElementById(id);
 const form = $("key-form");
