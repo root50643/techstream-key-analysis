@@ -1,0 +1,19 @@
+{
+  "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+  "version": "18.00.008",
+  "major_version": "18",
+  "region": "JP",
+  "days": 30,
+  "day_field": "0030",
+  "issued_field": "2611020115",
+  "issued_local": "2026-11-02T01:15:01",
+  "region_value": "SVciaorlleett1118",
+  "stage1_input": "0030Japan6919BDAC3B1AF548BB2EA44E2D685305",
+  "stage1_md5": "63427e6830e36c26e9dbade20109e637",
+  "stage2_input": "SVciaorlleett1118261102011563427e6830e36c26e9dbade20109e63718",
+  "stage2_md5": "1b611dc48823fb0e9b7e9024a84b5722",
+  "new_key": "823fb0e9b7e9010111260230024a84501b611dc48b5722",
+  "layout": "JP-permuted",
+  "unshuffled_key": "1b611dc48823fb0e9b7e9024a84b572200302611020115",
+  "profile": "JP18-native"
+}

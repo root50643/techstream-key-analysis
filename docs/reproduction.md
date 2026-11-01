@@ -7,6 +7,7 @@
 ```powershell
 $env:PYTHONPATH = 'src'
 python -m techstream_keys 6919BDAC3B1AF548BB2EA44E2D685305 --version 18.00.008 --region OT --days 30 --issued 2611020115
+python -m techstream_keys 6919BDAC3B1AF548BB2EA44E2D685305 --version 18.00.008 --region JP --days 30 --issued 2611020115
 python -m unittest discover -s tests -v
 ```
 
@@ -33,6 +34,8 @@ python -m unittest discover -s tests -v
 ```
 
 此命令重新編譯 probe，執行 18 組比對，並重寫原生測試結果及固定範例。測試只呼叫已反編譯確認的摘要函式，沒有連車或修改註冊設定檔。
+
+JP 的獨立重跑流程見 [JP 分支補充分析](jp-analysis.md#reproduce)。它另外產生 `evidence/static/JP/analysis.json`、`evidence/runtime/native-jp-results.json` 與 JP 範例，不會覆寫原始 OT GUI 證據。`native_jp_validate.py` 的 11 項檢查包含 1 項原生常數解碼與 10 項摘要／靜態解析器欄位核對；JP GUI 接受測試尚未執行。
 
 ## GUI 驗證
 

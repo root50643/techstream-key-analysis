@@ -1,0 +1,331 @@
+{
+  "recorded_at": "2026-11-01T18:40:18.601264+00:00",
+  "architecture": "x86",
+  "binary_sha256": {
+    "MainMenu.exe": "367454c8161def29cf2df5e619f135cfce142fbd7a004666fcc063faa228b594",
+    "tiswebapi.dll": "73d8251c46fb0c9b9cac4005f257443f5574d018cb4dc4bbda486c23829e55fe",
+    "IT3Versatile.dll": "8e607391cad2c199a473a17eeb3c01a4ece1fd7009d21c0b37e189a471f6436c"
+  },
+  "native_rotation": {
+    "encoded": "`cpvn14yyrr66>>>E",
+    "decoded": "SVciaorlleett1118",
+    "pass": true
+  },
+  "tests_passed": 11,
+  "results": [
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 1,
+        "day_field": "0001",
+        "issued_field": "2611020115",
+        "issued_local": "2026-11-02T01:15:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "0001Japan6919BDAC3B1AF548BB2EA44E2D685305",
+        "stage1_md5": "af0249188c5673afd29d79e3c4688f0f",
+        "stage2_input": "SVciaorlleett11182611020115af0249188c5673afd29d79e3c4688f0f18",
+        "stage2_md5": "fc81b43a2f4027261a2b8857a66a0ba9",
+        "new_key": "f4027261a2b8010111260201857a6650fc81b43a2a0ba9",
+        "layout": "JP-permuted",
+        "unshuffled_key": "fc81b43a2f4027261a2b8857a66a0ba900012611020115",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "af0249188c5673afd29d79e3c4688f0f",
+      "native_stage2": "fc81b43a2f4027261a2b8857a66a0ba9",
+      "parser_recovered": {
+        "day_field": "0001",
+        "issued_field": "2611020115",
+        "digest": "fc81b43a2f4027261a2b8857a66a0ba9"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 30,
+        "day_field": "0030",
+        "issued_field": "2611020115",
+        "issued_local": "2026-11-02T01:15:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "0030Japan6919BDAC3B1AF548BB2EA44E2D685305",
+        "stage1_md5": "63427e6830e36c26e9dbade20109e637",
+        "stage2_input": "SVciaorlleett1118261102011563427e6830e36c26e9dbade20109e63718",
+        "stage2_md5": "1b611dc48823fb0e9b7e9024a84b5722",
+        "new_key": "823fb0e9b7e9010111260230024a84501b611dc48b5722",
+        "layout": "JP-permuted",
+        "unshuffled_key": "1b611dc48823fb0e9b7e9024a84b572200302611020115",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "63427e6830e36c26e9dbade20109e637",
+      "native_stage2": "1b611dc48823fb0e9b7e9024a84b5722",
+      "parser_recovered": {
+        "day_field": "0030",
+        "issued_field": "2611020115",
+        "digest": "1b611dc48823fb0e9b7e9024a84b5722"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 365,
+        "day_field": "0365",
+        "issued_field": "2611020115",
+        "issued_local": "2026-11-02T01:15:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "0365Japan6919BDAC3B1AF548BB2EA44E2D685305",
+        "stage1_md5": "c129452d3e69ae7140089b3bd4644662",
+        "stage2_input": "SVciaorlleett11182611020115c129452d3e69ae7140089b3bd464466218",
+        "stage2_md5": "6deaf995567eafb2c9829fde0b845807",
+        "new_key": "67eafb2c9829013111260265fde0b8506deaf995545807",
+        "layout": "JP-permuted",
+        "unshuffled_key": "6deaf995567eafb2c9829fde0b84580703652611020115",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "c129452d3e69ae7140089b3bd4644662",
+      "native_stage2": "6deaf995567eafb2c9829fde0b845807",
+      "parser_recovered": {
+        "day_field": "0365",
+        "issued_field": "2611020115",
+        "digest": "6deaf995567eafb2c9829fde0b845807"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 9999,
+        "day_field": "9999",
+        "issued_field": "2611020115",
+        "issued_local": "2026-11-02T01:15:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "9999Japan6919BDAC3B1AF548BB2EA44E2D685305",
+        "stage1_md5": "924ca6604964496587463ab8b1ecff01",
+        "stage2_input": "SVciaorlleett11182611020115924ca6604964496587463ab8b1ecff0118",
+        "stage2_md5": "a13bc485be8f1ef5f0e46946085722a2",
+        "new_key": "e8f1ef5f0e4601911126029994608559a13bc485b722a2",
+        "layout": "JP-permuted",
+        "unshuffled_key": "a13bc485be8f1ef5f0e46946085722a299992611020115",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "924ca6604964496587463ab8b1ecff01",
+      "native_stage2": "a13bc485be8f1ef5f0e46946085722a2",
+      "parser_recovered": {
+        "day_field": "9999",
+        "issued_field": "2611020115",
+        "digest": "a13bc485be8f1ef5f0e46946085722a2"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "00000000000000000000000000000000",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 1,
+        "day_field": "0001",
+        "issued_field": "2611020116",
+        "issued_local": "2026-11-02T01:16:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "0001Japan00000000000000000000000000000000",
+        "stage1_md5": "a8207838c7c888f8fa37f0ef67c197d1",
+        "stage2_input": "SVciaorlleett11182611020116a8207838c7c888f8fa37f0ef67c197d118",
+        "stage2_md5": "3739a35abc7f9dcc1d7610b330b2d1a5",
+        "new_key": "c7f9dcc1d7610101112602010b330b603739a35ab2d1a5",
+        "layout": "JP-permuted",
+        "unshuffled_key": "3739a35abc7f9dcc1d7610b330b2d1a500012611020116",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "a8207838c7c888f8fa37f0ef67c197d1",
+      "native_stage2": "3739a35abc7f9dcc1d7610b330b2d1a5",
+      "parser_recovered": {
+        "day_field": "0001",
+        "issued_field": "2611020116",
+        "digest": "3739a35abc7f9dcc1d7610b330b2d1a5"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "00000000000000000000000000000000",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 30,
+        "day_field": "0030",
+        "issued_field": "2611020116",
+        "issued_local": "2026-11-02T01:16:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "0030Japan00000000000000000000000000000000",
+        "stage1_md5": "c1900c6c7998a56c3a25104f3e4eb17c",
+        "stage2_input": "SVciaorlleett11182611020116c1900c6c7998a56c3a25104f3e4eb17c18",
+        "stage2_md5": "ed740624f0994ccc0a3f9dd23493721c",
+        "new_key": "0994ccc0a3f9010111260230dd234960ed740624f3721c",
+        "layout": "JP-permuted",
+        "unshuffled_key": "ed740624f0994ccc0a3f9dd23493721c00302611020116",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "c1900c6c7998a56c3a25104f3e4eb17c",
+      "native_stage2": "ed740624f0994ccc0a3f9dd23493721c",
+      "parser_recovered": {
+        "day_field": "0030",
+        "issued_field": "2611020116",
+        "digest": "ed740624f0994ccc0a3f9dd23493721c"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "17234CF16B3C9F3D77EAEEF4938EB601",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 5000,
+        "day_field": "5000",
+        "issued_field": "1911042048",
+        "issued_local": "2019-11-04T20:48:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "5000Japan17234CF16B3C9F3D77EAEEF4938EB601",
+        "stage1_md5": "05c9a11ccea39c16350457c35276b831",
+        "stage2_input": "SVciaorlleett1118191104204805c9a11ccea39c16350457c35276b83118",
+        "stage2_md5": "3ca2ffe803a7fbd01de3beee1684285c",
+        "new_key": "3a7fbd01de3b200114190400eee168853ca2ffe804285c",
+        "layout": "JP-permuted",
+        "unshuffled_key": "3ca2ffe803a7fbd01de3beee1684285c50001911042048",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "05c9a11ccea39c16350457c35276b831",
+      "native_stage2": "3ca2ffe803a7fbd01de3beee1684285c",
+      "parser_recovered": {
+        "day_field": "5000",
+        "issued_field": "1911042048",
+        "digest": "3ca2ffe803a7fbd01de3beee1684285c"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 30,
+        "day_field": "0030",
+        "issued_field": "3712312359",
+        "issued_local": "2037-12-31T23:59:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "0030Japan6919BDAC3B1AF548BB2EA44E2D685305",
+        "stage1_md5": "63427e6830e36c26e9dbade20109e637",
+        "stage2_input": "SVciaorlleett1118371231235963427e6830e36c26e9dbade20109e63718",
+        "stage2_md5": "6f0363aa9864135af0d1bd11ebb30f0d",
+        "new_key": "864135af0d1b230125373130d11ebb906f0363aa930f0d",
+        "layout": "JP-permuted",
+        "unshuffled_key": "6f0363aa9864135af0d1bd11ebb30f0d00303712312359",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "63427e6830e36c26e9dbade20109e637",
+      "native_stage2": "6f0363aa9864135af0d1bd11ebb30f0d",
+      "parser_recovered": {
+        "day_field": "0030",
+        "issued_field": "3712312359",
+        "digest": "6f0363aa9864135af0d1bd11ebb30f0d"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+        "version": "18.00.008",
+        "major_version": "18",
+        "region": "JP",
+        "days": 30,
+        "day_field": "0030",
+        "issued_field": "2402292359",
+        "issued_local": "2024-02-29T23:59:01",
+        "region_value": "SVciaorlleett1118",
+        "stage1_input": "0030Japan6919BDAC3B1AF548BB2EA44E2D685305",
+        "stage1_md5": "63427e6830e36c26e9dbade20109e637",
+        "stage2_input": "SVciaorlleett1118240229235963427e6830e36c26e9dbade20109e63718",
+        "stage2_md5": "0b9a9a469b9b598df1a4dcbc37744344",
+        "new_key": "b9b598df1a4d230025242930cbc377900b9a9a46944344",
+        "layout": "JP-permuted",
+        "unshuffled_key": "0b9a9a469b9b598df1a4dcbc3774434400302402292359",
+        "profile": "JP18-native"
+      },
+      "native_stage1": "63427e6830e36c26e9dbade20109e637",
+      "native_stage2": "0b9a9a469b9b598df1a4dcbc37744344",
+      "parser_recovered": {
+        "day_field": "0030",
+        "issued_field": "2402292359",
+        "digest": "0b9a9a469b9b598df1a4dcbc37744344"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    },
+    {
+      "test": "native_jp_two_stage_digest",
+      "pass": true,
+      "value": {
+        "software_id": "17234CF16B3C9F3D77EAEEF4938EB601",
+        "version": "14.00.000",
+        "major_version": "14",
+        "region": "JP",
+        "days": 5000,
+        "day_field": "5000",
+        "issued_field": "1911042048",
+        "issued_local": "2019-11-04T20:48:01",
+        "region_value": "wrNpTrgLvA2A",
+        "stage1_input": "5000Japan17234CF16B3C9F3D77EAEEF4938EB601",
+        "stage1_md5": "05c9a11ccea39c16350457c35276b831",
+        "stage2_input": "wrNpTrgLvA2A191104204805c9a11ccea39c16350457c35276b83114",
+        "stage2_md5": "4d0de25493d04abad7c6eec401037cd8",
+        "new_key": "3d04abad7c6e200114190400ec4010854d0de254937cd8",
+        "layout": "JP-permuted",
+        "unshuffled_key": "4d0de25493d04abad7c6eec401037cd850001911042048",
+        "profile": "JP14-public-source"
+      },
+      "native_stage1": "05c9a11ccea39c16350457c35276b831",
+      "native_stage2": "4d0de25493d04abad7c6eec401037cd8",
+      "parser_recovered": {
+        "day_field": "5000",
+        "issued_field": "1911042048",
+        "digest": "4d0de25493d04abad7c6eec401037cd8"
+      },
+      "scope": "Installed v18 MD5 calls plus static MainMenu inverse-layout check; no GUI acceptance claim"
+    }
+  ],
+  "gui_registration_test": "not performed for JP",
+  "vehicle_connected": false,
+  "installed_binary_modified": false,
+  "registration_settings_modified": false
+}

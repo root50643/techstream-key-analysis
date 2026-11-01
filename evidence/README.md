@@ -4,6 +4,8 @@
 
 `runtime/native-results.json` 為 18 組本機 x86 DLL 比對；`unit-tests.txt` 為 6 組 Python 測試。`gui-results.json` 為人工操作步驟經工具執行後整理的結果，請同時檢查下列原始畫面與可存取性文字。
 
+JP 擴充另收錄於 `static/JP/` 與 `runtime/native-jp-results.json`：前者包含重新匯出的 Ghidra 函式索引、反編譯組合語言節錄，以及從本機 PE／解析器獨立抽出的常數與重排；後者記錄 11 項原生解碼／摘要與靜態欄位核對。`examples/jp-public-reference.json` 固定公開 v14 腳本的來源提交、SHA-256 與實際輸出。原始 6 項測試輸出為初版記錄，目前測試命令另涵蓋 JP。JP 沒有註冊畫面接受測試，請勿將 DLL 計算一致解讀為 GUI 已接受。
+
 | 檔案 | 內容 |
 | --- | --- |
 | user-reference.png | 使用者提供的原始圖片，非本次新截圖 |

@@ -1,0 +1,20 @@
+{
+  "source_url": "https://raw.githubusercontent.com/LashaMorgoshia/TechStream-Keygen/52f250f70e28a277eee1901ec6ee977f52ea38a1/generateKey.js",
+  "source_commit": "52f250f70e28a277eee1901ec6ee977f52ea38a1",
+  "source_sha256": "3d16b12a2fde598cca61c7dc5dd278fc7d7c043a4b3108345922b5a44518faac",
+  "software_id": "17234CF16B3C9F3D77EAEEF4938EB601",
+  "version": "14.00.000",
+  "major_version": "14",
+  "region": "JP",
+  "days": 5000,
+  "day_field": "5000",
+  "issued_field": "1911042048",
+  "region_value": "wrNpTrgLvA2A",
+  "stage1_input": "5000Japan17234CF16B3C9F3D77EAEEF4938EB601",
+  "stage1_md5": "05c9a11ccea39c16350457c35276b831",
+  "stage2_input": "wrNpTrgLvA2A191104204805c9a11ccea39c16350457c35276b83114",
+  "stage2_md5": "4d0de25493d04abad7c6eec401037cd8",
+  "unshuffled_key": "4d0de25493d04abad7c6eec401037cd850001911042048",
+  "new_key": "3d04abad7c6e200114190400ec4010854d0de254937cd8",
+  "scope": "Exact output of the pinned public v14 script; not a local v14 GUI test. Full version 14.00.000 supplies the same major version 14."
+}

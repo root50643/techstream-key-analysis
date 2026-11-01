@@ -1,0 +1,190 @@
+{
+  "recorded_at": "2026-11-01T18:38:57.397346+00:00",
+  "binary": "MainMenu.exe",
+  "sha256": "367454c8161def29cf2df5e619f135cfce142fbd7a004666fcc063faa228b594",
+  "version": "18.00.008",
+  "constant": {
+    "va": "005144d4",
+    "file_offset": "001144d4",
+    "encoded_hex": "606370766e31347979727236363e3e3e45",
+    "encoded": "`cpvn14yyrr66>>>E",
+    "decoded": "SVciaorlleett1118"
+  },
+  "parser_export_sha256": "56c026ed033d11765d7d9757dd885f04c559cd47e68adaa34db324266ea7d58f",
+  "inverse_parser_calls": {
+    "day_field": [
+      {
+        "call": "00421c38",
+        "start": 31,
+        "length": 1
+      },
+      {
+        "call": "00421c61",
+        "start": 14,
+        "length": 1
+      },
+      {
+        "call": "00421c8a",
+        "start": 22,
+        "length": 2
+      }
+    ],
+    "issued_field": [
+      {
+        "call": "00421cb3",
+        "start": 18,
+        "length": 2
+      },
+      {
+        "call": "00421cdc",
+        "start": 15,
+        "length": 2
+      },
+      {
+        "call": "00421d05",
+        "start": 20,
+        "length": 2
+      },
+      {
+        "call": "00421d2e",
+        "start": 12,
+        "length": 2
+      },
+      {
+        "call": "00421d57",
+        "start": 17,
+        "length": 1
+      },
+      {
+        "call": "00421d80",
+        "start": 30,
+        "length": 1
+      }
+    ],
+    "digest": [
+      {
+        "call": "00421da9",
+        "start": 32,
+        "length": 9
+      },
+      {
+        "call": "00421dd1",
+        "start": 0,
+        "length": 12
+      },
+      {
+        "call": "00421dfa",
+        "start": 24,
+        "length": 6
+      },
+      {
+        "call": "00421e23",
+        "start": 41,
+        "length": 5
+      }
+    ]
+  },
+  "permutation_indices": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    42,
+    43,
+    33,
+    38,
+    39,
+    44,
+    36,
+    37,
+    40,
+    41,
+    34,
+    35,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    45,
+    32,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "permutation_segments": [
+    [
+      9,
+      21
+    ],
+    [
+      42,
+      44
+    ],
+    [
+      33,
+      34
+    ],
+    [
+      38,
+      40
+    ],
+    [
+      44,
+      45
+    ],
+    [
+      36,
+      38
+    ],
+    [
+      40,
+      42
+    ],
+    [
+      34,
+      36
+    ],
+    [
+      21,
+      27
+    ],
+    [
+      45,
+      46
+    ],
+    [
+      32,
+      33
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      27,
+      32
+    ]
+  ],
+  "verification": "Static inverse field extraction; not a GUI registration acceptance test"
+}

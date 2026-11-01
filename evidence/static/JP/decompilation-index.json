@@ -1,0 +1,44 @@
+{
+  "program": "MainMenu.exe",
+  "image_base": "00400000",
+  "functions": [
+    {
+      "requested": "00420d80",
+      "entry": "00420d80",
+      "name": "FUN_00420d80",
+      "complete": true,
+      "references": [
+        "0041e3d6 UNCONDITIONAL_CALL",
+        "00421efa UNCONDITIONAL_CALL"
+      ]
+    },
+    {
+      "requested": "004218b0",
+      "entry": "004218b0",
+      "name": "FUN_004218b0",
+      "complete": true,
+      "references": [
+        "004042c4 UNCONDITIONAL_CALL",
+        "0040deb2 UNCONDITIONAL_CALL"
+      ]
+    },
+    {
+      "requested": "004a9e40",
+      "entry": "004a9e40",
+      "name": "FUN_004a9e40",
+      "complete": true,
+      "references": [
+        "0042063f UNCONDITIONAL_CALL"
+      ]
+    },
+    {
+      "requested": "00423330",
+      "entry": "00423330",
+      "name": "FUN_00423330",
+      "complete": true,
+      "references": [
+        "004230b0 UNCONDITIONAL_CALL"
+      ]
+    }
+  ]
+}

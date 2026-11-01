@@ -6,7 +6,7 @@ from .algorithm import generate, verify
 parser = argparse.ArgumentParser(description="Reconstructed Techstream registration calculation")
 parser.add_argument("software_id")
 parser.add_argument("--version", default="18.00.008")
-parser.add_argument("--region", choices=["OT", "NA", "EU"], default="OT")
+parser.add_argument("--region", choices=["OT", "NA", "EU", "JP"], default="OT")
 parser.add_argument("--days", type=int, default=30)
 parser.add_argument("--issued", help="YYMMDDHHMM; defaults to current Asia/Taipei wall time")
 parser.add_argument("--verify", metavar="KEY", help="verify digest instead of generating")

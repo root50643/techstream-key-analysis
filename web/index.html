@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#173b32">
   <title>Techstream · New Key Generator</title>
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=english-1">
-  <script type="module" src="./app.js?v=english-1"></script>
+  <link rel="stylesheet" href="./styles.css?v=jp-1">
+  <script type="module" src="./app.js?v=jp-1"></script>
 </head>
 <body>
   <div class="page-shell">
@@ -28,7 +28,7 @@
           <h1 id="page-title">From Software ID<br>to <span>New Key.</span></h1>
           <p class="intro-copy">Adjust the parameters and generate a key instantly.<br class="desktop-break"> Everything runs in your browser. Your inputs are never sent to a server.</p>
         </div>
-        <div class="version-note"><span class="version-number">18<span>.00.008</span></span><span>Analysis reference version</span><span class="version-regions">OT <i>·</i> NA <i>·</i> EU</span></div>
+        <div class="version-note"><span class="version-number">18<span>.00.008</span></span><span>Analysis reference version</span><span class="version-regions">OT <i>·</i> NA <i>·</i> EU <i>·</i> JP</span></div>
       </section>
 
       <div class="workspace">
@@ -50,8 +50,8 @@
               </div>
               <div class="field">
                 <label for="region">Region</label>
-                <select id="region" name="region" aria-describedby="region-help region-error"><option value="OT">OT · Other</option><option value="NA">NA · N. America</option><option value="EU">EU · Europe</option></select>
-                <p id="region-help" class="field-help">JP uses a different layout and is not supported.</p>
+                <select id="region" name="region" aria-describedby="region-help region-error"><option value="OT">OT · Other</option><option value="NA">NA · N. America</option><option value="EU">EU · Europe</option><option value="JP">JP · Japan</option></select>
+                <p id="region-help" class="field-help">OT, NA and EU share the same field layout.</p>
                 <p id="region-error" class="field-error" hidden></p>
               </div>
             </div>
@@ -81,6 +81,7 @@
               <label for="new-key" class="result-label">46-CHARACTER REGISTRATION KEY</label>
               <textarea id="new-key" class="key-output mono" rows="3" readonly spellcheck="false" aria-describedby="key-format"></textarea>
               <div id="key-format" class="key-format"><span><i class="digest-dot"></i>Digest: 32 chars</span><span><i class="days-dot"></i>Days: 4 digits</span><span><i class="time-dot"></i>Time: 10 digits</span></div>
+              <p id="layout-note" class="layout-note" hidden>JP layout: digest, day count and time digits are interleaved.</p>
               <button id="copy-key" class="copy-button" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="11" rx="2"/><path d="M12 7V3H3v10h4"/></svg><span id="copy-label">Copy key</span></button>
               <dl class="result-metadata"><div><dt>Region</dt><dd id="result-region">—</dd></div><div><dt>Major version</dt><dd id="result-version">—</dd></div><div><dt>Validity</dt><dd id="result-days">—</dd></div></dl>
               <div class="result-time"><span>Time field</span><code id="result-issued">—</code></div>
@@ -88,8 +89,8 @@
             <p id="result-status" class="result-status" role="status" aria-live="polite">Generate a new key after changing any parameter.</p>
           </section>
 
-          <details id="calculation-details" class="details-card"><summary>View calculation details <span aria-hidden="true">＋</span></summary><div class="details-content"><p id="details-placeholder">Generate a key to inspect the inputs and digest at each stage.</p><div id="details-values" hidden><p class="detail-step">STAGE 01 · MD5</p><p class="detail-caption">Software ID + major version</p><code id="stage1-input" class="detail-code"></code><p class="detail-caption">First-stage digest</p><code id="stage1-hash" class="detail-code"></code><p class="detail-step">STAGE 02 · MD5</p><p class="detail-caption">Region constant</p><code id="region-value" class="detail-code"></code><p class="detail-caption">First-stage digest + region constant + days + time</p><code id="stage2-input" class="detail-code"></code><p class="detail-caption">Second-stage digest</p><code id="stage2-hash" class="detail-code"></code><button id="download-json" class="download-button" type="button" disabled>Download result as JSON <span aria-hidden="true">↓</span></button></div></div></details>
-          <aside class="scope-note"><span aria-hidden="true">ⓘ</span><p><strong>Validation scope</strong>OT was tested in the 18.00.008 registration screen. NA/EU digests were checked against the native DLL. Other versions and all possible durations have not been individually tested.</p></aside>
+          <details id="calculation-details" class="details-card"><summary>View calculation details <span aria-hidden="true">＋</span></summary><div class="details-content"><p id="details-placeholder">Generate a key to inspect the inputs and digest at each stage.</p><div id="details-values" hidden><p class="detail-step">STAGE 01 · MD5</p><p id="stage1-formula" class="detail-caption">Software ID + major version</p><code id="stage1-input" class="detail-code"></code><p class="detail-caption">First-stage digest</p><code id="stage1-hash" class="detail-code"></code><p class="detail-step">STAGE 02 · MD5</p><p class="detail-caption">Region constant</p><code id="region-value" class="detail-code"></code><p id="stage2-formula" class="detail-caption">First-stage digest + region constant + days + time</p><code id="stage2-input" class="detail-code"></code><p class="detail-caption">Second-stage digest</p><code id="stage2-hash" class="detail-code"></code><div id="jp-permutation-details" hidden><p class="detail-step">STAGE 03 · JP PERMUTATION</p><p id="jp-profile" class="detail-caption"></p><p class="detail-caption">Before permutation: digest + days + time</p><code id="jp-unshuffled-key" class="detail-code"></code><p class="detail-caption">The 46 characters are rearranged using the JP layout recovered from MainMenu's inverse parser.</p></div><button id="download-json" class="download-button" type="button" disabled>Download result as JSON <span aria-hidden="true">↓</span></button></div></div></details>
+          <aside class="scope-note"><span aria-hidden="true">ⓘ</span><p><strong>Validation scope</strong><span id="validation-scope-text">OT was tested in the 18.00.008 registration screen. NA/EU digests were checked against the native DLL. Other versions and all possible durations have not been individually tested.</span><a id="jp-report-link" href="https://github.com/root50643/techstream-key-analysis/blob/main/docs/jp-analysis.md" target="_blank" rel="noopener noreferrer" hidden>Read the JP analysis ↗</a></p></aside>
         </div>
       </div>
       <noscript><p class="noscript-note">Enable JavaScript to calculate keys in your browser.</p></noscript>

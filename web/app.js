@@ -1,4 +1,4 @@
-import { generateKey, localInputToIssued, toLocalInput, ParameterError } from "./algorithm.js?v=english-1";
+import { generateKey, localInputToIssued, toLocalInput, ParameterError } from "./algorithm.js?v=jp-1";
 
 const $ = id => document.getElementById(id);
 const form = $("key-form");
@@ -6,6 +6,20 @@ const fields = { softwareId: $("software-id"), version: $("version"), region: $(
 let result = null;
 let hasGenerated = false;
 let copyTimer;
+
+function updateRegionInfo() {
+  const isJP = fields.region.value === "JP";
+  const major = fields.version.value.trim().split(".")[0];
+  $("region-help").textContent = isJP ? "JP supports major versions 14 and 18, with different constants." : "OT, NA and EU share the same field layout.";
+  $("jp-report-link").hidden = !isJP;
+  $("validation-scope-text").textContent = !isJP
+    ? "OT was tested in the 18.00.008 registration screen. NA/EU digests were checked against the native DLL. Other versions and all possible durations have not been individually tested."
+    : major === "14"
+      ? "JP v14 reproduces the pinned public implementation. The original script's result was independently checked. A local v14 registration test has not been performed."
+      : major === "18"
+        ? "JP v18 was reconstructed from 18.00.008. The region constant and both digests were checked with the installed DLLs; the layout was checked against MainMenu's parser. JP GUI registration has not been tested."
+        : "JP profiles are available for major versions 14 and 18. Select a supported version before generating a key.";
+}
 
 function updatePresets() {
   document.querySelectorAll("[data-days]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.days === fields.days.value)));
@@ -36,6 +50,7 @@ function invalidate() {
   $("empty-description").textContent = hasGenerated ? "Select Generate New Key again to update your result." : "Enter your parameters or load the tested example.";
   $("result-status").textContent = hasGenerated ? "Parameters changed. Generate a new key." : "Generate a new key after changing any parameter.";
   updatePresets();
+  updateRegionInfo();
 }
 
 function render(value) {
@@ -52,6 +67,15 @@ function render(value) {
   $("result-version").textContent = value.major_version;
   $("result-days").textContent = `${value.days} ${value.days === 1 ? "day" : "days"}`;
   $("result-issued").textContent = value.issued_field;
+  const isJP = value.region === "JP";
+  $("layout-note").hidden = !isJP;
+  $("jp-permutation-details").hidden = !isJP;
+  $("stage1-formula").textContent = isJP ? 'Days + "Japan" + Software ID' : "Software ID + major version";
+  $("stage2-formula").textContent = isJP ? "Region constant + time + first-stage digest + major version" : "First-stage digest + region constant + days + time";
+  if (isJP) {
+    $("jp-unshuffled-key").textContent = value.unshuffled_key;
+    $("jp-profile").textContent = value.profile === "JP18-native" ? "JP v18 · Local binary analysis" : "JP v14 · Public reference";
+  }
   $("details-placeholder").hidden = true;
   $("details-values").hidden = false;
   for (const [id, key] of [["stage1-input", "stage1_input"], ["stage1-hash", "stage1_md5"], ["region-value", "region_value"], ["stage2-input", "stage2_input"], ["stage2-hash", "stage2_md5"]]) $(id).textContent = value[key];
@@ -90,9 +114,10 @@ document.querySelectorAll("[data-days]").forEach(button => button.addEventListen
 $("use-now").addEventListener("click", () => { fields.issued.value = toLocalInput(); clearErrors(); invalidate(); });
 
 $("load-example").addEventListener("click", () => {
+  const region = fields.region.value;
   fields.softwareId.value = "6919BDAC3B1AF548BB2EA44E2D685305";
   fields.version.value = "18.00.008";
-  fields.region.value = "OT";
+  fields.region.value = region;
   fields.days.value = "30";
   fields.issued.value = "2026-11-02T01:15";
   clearErrors();
@@ -132,3 +157,4 @@ $("download-json").addEventListener("click", () => {
 
 fields.issued.value = toLocalInput();
 updatePresets();
+updateRegionInfo();

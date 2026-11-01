@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { md5 } from "../web/md5.js";
-import { generateKey, localInputToIssued, toLocalInput, ParameterError } from "../web/algorithm.js";
+import { generateKey, inspectKey, JP_SLICES, localInputToIssued, toLocalInput, ParameterError } from "../web/algorithm.js";
 
 const readJson = path => JSON.parse(readFileSync(new URL(path, import.meta.url), "utf8"));
 const reference = readJson("../examples/reference-vector.json");
@@ -42,9 +42,42 @@ test("every adjustable parameter affects the expected part of the result", () =>
 });
 
 test("invalid IDs, unsupported regions, version formats and day values are rejected", () => {
-  for (const [field, values] of Object.entries({ softwareId: ["", "0".repeat(31), "G".repeat(32)], version: ["18", "18.0.008", "18.00.8"], region: ["JP", "XX", "toString"], days: [0, -1, 10000, 1.5, NaN, Infinity, "30"] })) {
+  for (const [field, values] of Object.entries({ softwareId: ["", "0".repeat(31), "G".repeat(32)], version: ["18", "18.0.008", "18.00.8"], region: ["XX", "toString"], days: [0, -1, 10000, 1.5, NaN, Infinity, "30"] })) {
     for (const value of values) assert.throws(() => generateKey({ ...base, [field]: value }), error => error instanceof ParameterError && error.field === field);
   }
+});
+
+test("JP permutation matches every index independently recovered from MainMenu", () => {
+  const analysis = readJson("../evidence/static/JP/analysis.json");
+  const indices = JP_SLICES.flatMap(([start, end]) => Array.from({ length: end - start }, (_, i) => start + i));
+  assert.deepEqual(indices, analysis.permutation_indices);
+  assert.deepEqual([...indices].sort((a, b) => a - b), Array.from({ length: 46 }, (_, i) => i));
+});
+
+test("all 10 JP vectors match Python, installed DLL digests and native-parser field extraction", () => {
+  const jp = readJson("../evidence/runtime/native-jp-results.json");
+  assert.equal(jp.results.length, 10);
+  for (const { value, native_stage1, native_stage2, parser_recovered } of jp.results) {
+    const generated = generateKey({ softwareId: value.software_id, version: value.version, region: "JP", days: value.days, issued: value.issued_field });
+    assert.deepEqual(generated, value);
+    assert.equal(generated.stage1_md5, native_stage1);
+    assert.equal(generated.stage2_md5, native_stage2);
+    const decoded = inspectKey(generated.new_key, "JP");
+    for (const field of ["digest", "day_field", "issued_field"]) assert.equal(decoded[field], parser_recovered[field]);
+  }
+});
+
+test("JP v14 reproduces the original public script and v18 uses its own native constant", () => {
+  const original = readJson("../examples/jp-public-reference.json");
+  const options = { softwareId: original.software_id, version: original.version, region: "JP", days: original.days, issued: original.issued_field };
+  const v14 = generateKey(options);
+  for (const field of ["new_key", "unshuffled_key", "stage1_input", "stage2_input", "stage1_md5", "stage2_md5", "region_value"]) assert.equal(v14[field], original[field]);
+  const v18 = generateKey({ ...options, version: "18.00.008" });
+  assert.equal(v14.region_value, "wrNpTrgLvA2A");
+  assert.equal(v18.region_value, "SVciaorlleett1118");
+  assert.equal(v14.stage1_md5, v18.stage1_md5);
+  assert.notEqual(v14.new_key, v18.new_key);
+  assert.throws(() => generateKey({ ...options, version: "19.00.000" }), error => error instanceof ParameterError && error.field === "version");
 });
 
 test("calendar validation checks leap years, invalid days, time and 2037 bound", () => {

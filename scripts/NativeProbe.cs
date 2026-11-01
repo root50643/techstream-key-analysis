@@ -14,9 +14,22 @@ public static class NativeProbe {
     [UnmanagedFunctionPointer(CallingConvention.ThisCall, CharSet=CharSet.Ansi)]
     delegate int Registration(IntPtr instance, string a, string b, string c,
                               string d, string e, StringBuilder result);
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet=CharSet.Ansi)]
+    delegate void DecodeRegion(int shift, int length, string encoded, [Out] byte[] output);
     public static int Main(string[] args) {
         if(args.Length != 3) { Console.Error.WriteLine("NativeProbe BIN_DIRECTORY PART1 PART2"); return 2; }
         SetDllDirectoryW(args[0]);
+        if(args[1] == "--decode-region") {
+            IntPtr versatile=LoadLibraryW(System.IO.Path.Combine(args[0],"IT3Versatile.dll"));
+            if(versatile==IntPtr.Zero) throw new System.ComponentModel.Win32Exception();
+            IntPtr decodeFn=GetProcAddress(versatile,"DecryptByRotatShiftVariable");
+            if(decodeFn==IntPtr.Zero) throw new System.ComponentModel.Win32Exception();
+            var decode=(DecodeRegion)Marshal.GetDelegateForFunctionPointer(decodeFn,typeof(DecodeRegion));
+            var decoded=new byte[args[2].Length+1];
+            decode(13,args[2].Length,args[2],decoded);
+            Console.WriteLine("{\"decoded_value\":\""+Encoding.ASCII.GetString(decoded,0,args[2].Length)+"\"}");
+            return 0;
+        }
         IntPtr module=LoadLibraryW(System.IO.Path.Combine(args[0],"tiswebapi.dll"));
         if(module==IntPtr.Zero) throw new System.ComponentModel.Win32Exception();
         IntPtr fn=GetProcAddress(module,"?TisServiceRegistration@CWebService@@QAEHPBD0000PAD@Z");
