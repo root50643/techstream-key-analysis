@@ -76,10 +76,10 @@
   "tests/test_algorithm.py": "2b930309068cab6ec7afcb1bac4fdd37b6faaac1694b59e551a63d109bb19206",
   "tests/web.test.mjs": "45d08a01610ec821d52c584ca94fef619bb1cfc78e42f5253e0adbecc7492046",
   "web/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "web/algorithm.js": "a56335230ad01cfe15dac84e21344a24ddf47f6dde14a571b448c79d92bba5d0",
-  "web/app.js": "def0c3f4de2095a63814367763ad643bd3aac54176e952c478cb1e9377c7d1c9",
+  "web/algorithm.js": "e2ff1a3c06d56ca8233cac72140e775d9f7e8f5a24eb8f9bf60d7d07fa2edeab",
+  "web/app.js": "270c7888f599c97271abf0bd4da23c5788387dae2ebc9e89aef1e4801bcd72dd",
   "web/icon.svg": "5e1d74ccd625658007fa9ca5ee6ab05fda6cd95f00f949416cbac464ad477e91",
-  "web/index.html": "2be7e17a2820e7795a50f7ff4023a951a6fe3d2bf2ede04d6eef6502567e935e",
+  "web/index.html": "966e9fc88e231b514fd5e4952e99528ecc105f499fa35f1c480eeaff5b4b9c84",
   "web/md5.js": "2c621ab56c9704a64655bc342c1c4238e7bc6adf6c1f7c0ee7a7dc9dcf822e06",
-  "web/styles.css": "c3b4175ecaf50a9b1992b27f23be597a126bd76448450766bd4c8bcc5aec8bab"
+  "web/styles.css": "01a450502d7dee025f1d57b8bf1b972f57d2f06cae07e2cee6299a9cbecb2412"
 }

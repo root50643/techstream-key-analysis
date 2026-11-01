@@ -7,7 +7,7 @@ export class ParameterError extends Error {
 }
 
 function validateIssued(issued) {
-  if (!/^\d{10}$/.test(issued)) throw new ParameterError("issued", "請提供完整的產生時間。");
+  if (!/^\d{10}$/.test(issued)) throw new ParameterError("issued", "Enter a complete generation date and time.");
   const year = 2000 + Number(issued.slice(0, 2));
   const month = Number(issued.slice(2, 4));
   const day = Number(issued.slice(4, 6));
@@ -15,16 +15,16 @@ function validateIssued(issued) {
   const minute = Number(issued.slice(8, 10));
   const date = new Date(Date.UTC(year, month - 1, day, hour, minute));
   if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day || date.getUTCHours() !== hour || date.getUTCMinutes() !== minute) {
-    throw new ParameterError("issued", "日期或時間無效，請檢查月份、日期與時間。");
+    throw new ParameterError("issued", "Invalid date or time. Check the month, day, hour and minute.");
   }
-  if (year > 2037) throw new ParameterError("issued", "原生日期解析器支援至 2037 年，請選擇 2000–2037 年。");
+  if (year > 2037) throw new ParameterError("issued", "Choose a year between 2000 and 2037.");
   return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:01`;
 }
 
 export function localInputToIssued(value) {
-  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value)) throw new ParameterError("issued", "請輸入完整日期與時間（精確至分鐘）。");
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value)) throw new ParameterError("issued", "Enter a complete date and time, to the minute.");
   const year = Number(value.slice(0, 4));
-  if (year < 2000 || year > 2037) throw new ParameterError("issued", "原生日期解析器支援至 2037 年，請選擇 2000–2037 年。");
+  if (year < 2000 || year > 2037) throw new ParameterError("issued", "Choose a year between 2000 and 2037.");
   const issued = value.slice(2).replace(/[-T:]/g, "");
   validateIssued(issued);
   return issued;
@@ -39,10 +39,10 @@ export function generateKey({ softwareId, version, region, days, issued }) {
   softwareId = String(softwareId ?? "").trim().toUpperCase();
   version = String(version ?? "").trim();
   region = String(region ?? "").toUpperCase();
-  if (!/^[0-9A-F]{32}$/.test(softwareId)) throw new ParameterError("softwareId", "Software ID 必須為 32 位十六進位字元（0–9、A–F）。");
-  if (!/^\d+\.\d{2}\.\d{3}$/.test(version)) throw new ParameterError("version", "請使用完整版本格式，例如 18.00.008。");
-  if (!Object.hasOwn(REGION_VALUES, region)) throw new ParameterError("region", "目前支援 OT、NA、EU；JP 使用不同的計算與排列。");
-  if (!Number.isInteger(days) || days < 1 || days > 9999) throw new ParameterError("days", "有效天數必須為 1–9999 的整數。");
+  if (!/^[0-9A-F]{32}$/.test(softwareId)) throw new ParameterError("softwareId", "Software ID must be exactly 32 hexadecimal characters (0-9, A-F).");
+  if (!/^\d+\.\d{2}\.\d{3}$/.test(version)) throw new ParameterError("version", "Enter a full version number, such as 18.00.008.");
+  if (!Object.hasOwn(REGION_VALUES, region)) throw new ParameterError("region", "Supported regions are OT, NA and EU. JP uses a different calculation and layout.");
+  if (!Number.isInteger(days) || days < 1 || days > 9999) throw new ParameterError("days", "Validity must be a whole number from 1 to 9999 days.");
   const issuedLocal = validateIssued(issued);
   const majorVersion = version.split(".")[0];
   const dayField = String(days).padStart(4, "0");

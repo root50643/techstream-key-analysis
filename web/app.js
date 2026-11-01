@@ -22,7 +22,7 @@ function clearErrors() {
 function invalidate() {
   result = null;
   clearTimeout(copyTimer);
-  $("copy-label").textContent = "複製金鑰";
+  $("copy-label").textContent = "Copy key";
   $("new-key").value = "";
   $("copy-key").disabled = true;
   $("download-json").disabled = true;
@@ -31,10 +31,10 @@ function invalidate() {
   $("details-values").hidden = true;
   $("details-placeholder").hidden = false;
   $("result-card").dataset.state = hasGenerated ? "stale" : "idle";
-  $("result-badge").textContent = hasGenerated ? "待重新產生" : "等待輸入";
-  $("empty-title").textContent = hasGenerated ? "參數已更新。" : "準備好，就開始計算。";
-  $("empty-description").textContent = hasGenerated ? "再次點選「產生 New Key」，取得對應的新金鑰。" : "填入左側參數，或載入實測範例。";
-  $("result-status").textContent = hasGenerated ? "參數已變更，請重新產生金鑰。" : "調整任何參數後，請重新產生金鑰。";
+  $("result-badge").textContent = hasGenerated ? "Regenerate" : "Awaiting input";
+  $("empty-title").textContent = hasGenerated ? "Parameters updated." : "Ready when you are.";
+  $("empty-description").textContent = hasGenerated ? "Select Generate New Key again to update your result." : "Enter your parameters or load the tested example.";
+  $("result-status").textContent = hasGenerated ? "Parameters changed. Generate a new key." : "Generate a new key after changing any parameter.";
   updatePresets();
 }
 
@@ -42,7 +42,7 @@ function render(value) {
   result = value;
   hasGenerated = true;
   $("result-card").dataset.state = "ready";
-  $("result-badge").textContent = "已產生 · 46 碼";
+  $("result-badge").textContent = "Ready · 46 chars";
   $("result-empty").hidden = true;
   $("result-content").hidden = false;
   $("new-key").value = value.new_key;
@@ -50,12 +50,12 @@ function render(value) {
   $("download-json").disabled = false;
   $("result-region").textContent = value.region;
   $("result-version").textContent = value.major_version;
-  $("result-days").textContent = `${value.days} 天`;
+  $("result-days").textContent = `${value.days} ${value.days === 1 ? "day" : "days"}`;
   $("result-issued").textContent = value.issued_field;
   $("details-placeholder").hidden = true;
   $("details-values").hidden = false;
   for (const [id, key] of [["stage1-input", "stage1_input"], ["stage1-hash", "stage1_md5"], ["region-value", "region_value"], ["stage2-input", "stage2_input"], ["stage2-hash", "stage2_md5"]]) $(id).textContent = value[key];
-  $("result-status").textContent = "金鑰已在瀏覽器完成計算。可複製金鑰，或展開明細下載結果。";
+  $("result-status").textContent = "Calculated in your browser. Copy the key or open the details to download the result.";
 }
 
 form.addEventListener("submit", event => {
@@ -71,7 +71,7 @@ form.addEventListener("submit", event => {
     render(value);
   } catch (error) {
     invalidate();
-    $("form-error").textContent = error instanceof ParameterError ? error.message : "計算未完成，請重新檢查輸入參數。";
+    $("form-error").textContent = error instanceof ParameterError ? error.message : "Calculation failed. Please check your parameters and try again.";
     $("form-error").hidden = false;
     if (error instanceof ParameterError && fields[error.field]) {
       const input = fields[error.field];
@@ -106,15 +106,15 @@ $("copy-key").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(key);
     if (result?.new_key !== key) return;
-    $("copy-label").textContent = "已複製";
-    $("result-status").textContent = "46 碼金鑰已複製至剪貼簿。";
+    $("copy-label").textContent = "Copied";
+    $("result-status").textContent = "The 46-character key was copied to your clipboard.";
     clearTimeout(copyTimer);
-    copyTimer = setTimeout(() => { $("copy-label").textContent = "複製金鑰"; }, 2500);
+    copyTimer = setTimeout(() => { $("copy-label").textContent = "Copy key"; }, 2500);
   } catch {
     if (result?.new_key !== key) return;
     $("new-key").focus();
     $("new-key").select();
-    $("result-status").textContent = "無法自動複製，已選取金鑰，請手動複製。";
+    $("result-status").textContent = "Automatic copying is unavailable. The key is selected; please copy it manually.";
   }
 });
 
