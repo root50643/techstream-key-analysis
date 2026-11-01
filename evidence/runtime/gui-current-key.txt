@@ -1,0 +1,54 @@
+Window: "Techstream (Ver 18.00.008)", App: MainMenu.exe.
+	0 視窗 Techstream (Ver 18.00.008) Secondary Actions: Raise
+		19 按鈕 Connect to Vehicle ID: 1000
+		20 按鈕 Open Scan Data File ID: 1001
+		21 按鈕 Launch WSI ID: 1002
+		22 按鈕 Generic OBD II ID: 1005
+		23 按鈕 Software Registration ID: 1006
+		24 按鈕 User Selection ID: 1007
+		25 文字 Ver 18.00.008 ID: 1013
+		26 按鈕 Log Out ID: 1008
+		27 按鈕 Language Selection ID: 1009
+		102 文字 Subscription Expiration ID: 1014
+		103 文字 30d 00h 00m ID: 1015
+		28 按鈕 Advanced Function ID: 1010
+		29 狀態列 ID: 59393
+			30 文字 S200-01
+			31 文字 
+			32 文字 VIM - TIS Techstream VIM
+			33 文字 
+			34 文字 Default User
+			35 文字 
+		36 標題列 (settable, string) Value: Techstream (Ver 18.00.008)
+			37 功能表列 系統 ID: MenuBar
+				95 功能表項目 系統
+			39 按鈕 最小化
+			40 按鈕 最大化
+			41 按鈕 關閉
+		42 功能表列 應用程式 ID: MenuBar
+			96 功能表項目 File
+			97 功能表項目 Function
+			98 功能表項目 Setup
+			99 功能表項目 WSI
+			100 功能表項目 User
+			101 功能表項目 Help
+		104 對話 Register Techstream Software (S314-01) Secondary Actions: Raise
+			105 文字 Registration information: ID: 5180
+			106 群組 Registration information: ID: 5274
+			107 文字 Software ID: ID: 5176
+			108 文字 Software Version: ID: 5177
+			109 文字 18.00.008 ID: 5182
+			110 文字 Current Key: ID: 5178
+			111 編輯 (settable, string) Current Key: ID: 5175
+			112 文字 To register software, click on the Software Registration button below. If you are unable to access the software registration web page, contact Techstream support. For Techstream support, click the Support Information button below. ID: 5179
+			113 按鈕 Software Registration ID: 5089
+			114 按鈕 OK ID: 5090
+			115 按鈕 (disabled) Evaluate ID: 5092
+			116 按鈕 Cancel ID: 5091
+			117 按鈕 (disabled) Support Information ID: 5093
+			118 文字 New Key: ID: 5183
+			119 文字 e7c69e321e4ab1314a490a16296cdc0900302611020115 ID: 5184
+			120 編輯 e7c69e321e4ab1314a490a16296cdc0900302611020115 Value: 6919BDAC3B1AF548BB2EA44E2D685305 ID: 5323
+			121 標題列 (settable, string) Value: Register Techstream Software (S314-01)
+
+The focused UI element is 19 按鈕 Connect to Vehicle ID: 1000.

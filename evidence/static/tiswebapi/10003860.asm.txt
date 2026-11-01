@@ -1,0 +1,9 @@
+10003860  MOV EAX,dword ptr [ESP + 0x4]
+10003864  XOR ECX,ECX
+10003866  MOV dword ptr [EAX],0x67452301
+1000386c  MOV dword ptr [EAX + 0x4],0xefcdab89
+10003873  MOV dword ptr [EAX + 0x8],0x98badcfe
+1000387a  MOV dword ptr [EAX + 0xc],0x10325476
+10003881  MOV dword ptr [EAX + 0x10],ECX
+10003884  MOV dword ptr [EAX + 0x14],ECX
+10003887  RET 0x4

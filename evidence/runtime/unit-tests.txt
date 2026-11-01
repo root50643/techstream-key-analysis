@@ -1,0 +1,11 @@
+test_bad_inputs (test_algorithm.AlgorithmTests.test_bad_inputs) ... ok
+test_changes_to_identity_and_major_version_fail (test_algorithm.AlgorithmTests.test_changes_to_identity_and_major_version_fail) ... ok
+test_fixed_vector (test_algorithm.AlgorithmTests.test_fixed_vector) ... ok
+test_literal_from_native_dll (test_algorithm.AlgorithmTests.test_literal_from_native_dll) ... ok
+test_region_is_part_of_digest (test_algorithm.AlgorithmTests.test_region_is_part_of_digest) ... ok
+test_tamper_every_field (test_algorithm.AlgorithmTests.test_tamper_every_field) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

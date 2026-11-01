@@ -1,0 +1,16 @@
+{
+  "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+  "version": "18.00.008",
+  "major_version": "18",
+  "region": "OT",
+  "days": 30,
+  "day_field": "0030",
+  "issued_field": "2611020115",
+  "issued_local": "2026-11-02T01:15:01",
+  "region_value": "SKE48",
+  "stage1_input": "6919BDAC3B1AF548BB2EA44E2D68530518",
+  "stage1_md5": "ea5463fac8b3ecd5cf627d10562b6efc",
+  "stage2_input": "ea5463fac8b3ecd5cf627d10562b6efcSKE4800302611020115",
+  "stage2_md5": "e7c69e321e4ab1314a490a16296cdc09",
+  "new_key": "e7c69e321e4ab1314a490a16296cdc0900302611020115"
+}

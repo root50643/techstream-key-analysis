@@ -1,0 +1,26 @@
+{
+  "program": "IT3Versatile.dll",
+  "image_base": "10000000",
+  "functions": [
+    {
+      "requested": "10001740",
+      "entry": "10001740",
+      "name": "EncryptByRotatShiftVariable",
+      "complete": true,
+      "references": [
+        "100021c8 DATA",
+        "Entry Point EXTERNAL"
+      ]
+    },
+    {
+      "requested": "10001790",
+      "entry": "10001790",
+      "name": "DecryptByRotatShiftVariable",
+      "complete": true,
+      "references": [
+        "100021cc DATA",
+        "Entry Point EXTERNAL"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-11-02T01:25:31.358853+08:00",
+  "samples": [
+    {
+      "name": "MainMenu.exe",
+      "size": 2953216,
+      "sha256": "367454c8161def29cf2df5e619f135cfce142fbd7a004666fcc063faa228b594",
+      "copied_sample_equal": true,
+      "matches_existing_installer_extraction": true
+    },
+    {
+      "name": "tiswebapi.dll",
+      "size": 565248,
+      "sha256": "73d8251c46fb0c9b9cac4005f257443f5574d018cb4dc4bbda486c23829e55fe",
+      "copied_sample_equal": true,
+      "matches_existing_installer_extraction": true
+    },
+    {
+      "name": "IT3Versatile.dll",
+      "size": 24576,
+      "sha256": "8e607391cad2c199a473a17eeb3c01a4ece1fd7009d21c0b37e189a471f6436c",
+      "copied_sample_equal": true,
+      "matches_existing_installer_extraction": true
+    }
+  ],
+  "toolchain": {
+    "ghidra": "12.1.4",
+    "java": "21",
+    "architecture": "x86:LE:32"
+  }
+}

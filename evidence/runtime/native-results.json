@@ -1,0 +1,170 @@
+{
+  "recorded_at": "2026-11-02T01:14:23.428045+08:00",
+  "library": "tiswebapi.dll",
+  "sha256": "73d8251c46fb0c9b9cac4005f257443f5574d018cb4dc4bbda486c23829e55fe",
+  "architecture": "x86",
+  "probe": "NativeProbe.cs compiled with /platform:x86",
+  "tests_passed": 18,
+  "results": [
+    {
+      "test": "native_md5_boundary",
+      "input1": "abc",
+      "input2": "def",
+      "native": "e80b5017098950fc58aad83c8c14978e",
+      "expected": "e80b5017098950fc58aad83c8c14978e",
+      "pass": true
+    },
+    {
+      "test": "native_md5_boundary",
+      "input1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input2": "bbbbbbbbbbbbbbbbbbbbbbbb",
+      "native": "3be21b0f3441183def8a6d353b32eeaf",
+      "expected": "3be21b0f3441183def8a6d353b32eeaf",
+      "pass": true
+    },
+    {
+      "test": "native_md5_boundary",
+      "input1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input2": "bbbbbbbbbbbbbbbbbbbbbbbb",
+      "native": "f0b382b4dae7aa2633f0f5ee2e93e5a8",
+      "expected": "f0b382b4dae7aa2633f0f5ee2e93e5a8",
+      "pass": true
+    },
+    {
+      "test": "native_md5_boundary",
+      "input1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input2": "b",
+      "native": "f49ba78618bb562229aea6252e2b834b",
+      "expected": "f49ba78618bb562229aea6252e2b834b",
+      "pass": true
+    },
+    {
+      "test": "native_md5_boundary",
+      "input1": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "input2": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "native": "52e99a8ecbb967bca9277fd66267111b",
+      "expected": "52e99a8ecbb967bca9277fd66267111b",
+      "pass": true
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "OT",
+      "days": 1,
+      "new_key": "bded1ab321adf9e2ffe0d4f716d7575a00012611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "bded1ab321adf9e2ffe0d4f716d7575a",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "OT",
+      "days": 30,
+      "new_key": "e7c69e321e4ab1314a490a16296cdc0900302611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "e7c69e321e4ab1314a490a16296cdc09",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "OT",
+      "days": 9999,
+      "new_key": "27a713d7947dc0d7cb981e0e8b3c763199992611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "27a713d7947dc0d7cb981e0e8b3c7631",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "NA",
+      "days": 1,
+      "new_key": "25b6cf791fc80d3de6634342bb184b4200012611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "25b6cf791fc80d3de6634342bb184b42",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "NA",
+      "days": 30,
+      "new_key": "9f148e777831fc137ed3cd63dc8ec33600302611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "9f148e777831fc137ed3cd63dc8ec336",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "NA",
+      "days": 9999,
+      "new_key": "b9fa9d8f67f4d6bb874009b788c9718599992611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "b9fa9d8f67f4d6bb874009b788c97185",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "EU",
+      "days": 1,
+      "new_key": "3df5fcb30dd0c04405cddf452c9a923100012611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "3df5fcb30dd0c04405cddf452c9a9231",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "EU",
+      "days": 30,
+      "new_key": "d932d5d9d8f4aec3d6774dd93e95a9d500302611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "d932d5d9d8f4aec3d6774dd93e95a9d5",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "native_two_stage_digest",
+      "region": "EU",
+      "days": 9999,
+      "new_key": "bc23d3ee4d5298bdbbb3443419f3bf2599992611020115",
+      "stage1": "ea5463fac8b3ecd5cf627d10562b6efc",
+      "stage2": "bc23d3ee4d5298bdbbb3443419f3bf25",
+      "pass": true,
+      "scope": "DLL digest only; not UI acceptance or duration support"
+    },
+    {
+      "test": "digest_mutation",
+      "submitted_digest": "07c69e321e4ab1314a490a16296cdc09",
+      "native_expected_digest": "e7c69e321e4ab1314a490a16296cdc09",
+      "pass": true,
+      "scope": "native recomputation and comparison, not GUI rejection"
+    },
+    {
+      "test": "different_id",
+      "submitted_digest": "e7c69e321e4ab1314a490a16296cdc09",
+      "native_expected_digest": "aacb10e7ddd8b65a1f80c95ef3770c77",
+      "pass": true,
+      "scope": "native recomputation and comparison, not GUI rejection"
+    },
+    {
+      "test": "different_major",
+      "submitted_digest": "e7c69e321e4ab1314a490a16296cdc09",
+      "native_expected_digest": "ac4e13b57307cf0f817acbffba9c7a24",
+      "pass": true,
+      "scope": "native recomputation and comparison, not GUI rejection"
+    },
+    {
+      "test": "different_region",
+      "submitted_digest": "e7c69e321e4ab1314a490a16296cdc09",
+      "native_expected_digest": "d932d5d9d8f4aec3d6774dd93e95a9d5",
+      "pass": true,
+      "scope": "native recomputation and comparison, not GUI rejection"
+    }
+  ],
+  "gui_registration_test": "passed separately; see gui-results.json",
+  "vehicle_connected": false
+}

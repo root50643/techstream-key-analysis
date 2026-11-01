@@ -1,0 +1,35 @@
+{
+  "recorded_at": "2026-11-02T01:25:31.477106+08:00",
+  "software_id": "6919BDAC3B1AF548BB2EA44E2D685305",
+  "version": "18.00.008",
+  "region": "OT",
+  "key": "e7c69e321e4ab1314a490a16296cdc0900302611020115",
+  "days": 30,
+  "invalid_46_zeros": {
+    "submitted": true,
+    "accepted": false,
+    "observed": "dialog rebuilt, New Key cleared, Current Key empty",
+    "standalone_error_dialog_observed": false
+  },
+  "generated_key": {
+    "submitted": true,
+    "accepted": true,
+    "initial_expiration_display": "30d 00h 00m",
+    "current_key_equal": true,
+    "config_key_equal": true
+  },
+  "restart": {
+    "verified": true,
+    "expiration_display": "29d 23h 58m",
+    "new_window_id": 7606734,
+    "note": "Closed window; ended remaining windowless MainMenu process; launched a new process."
+  },
+  "environment_events": [
+    "Desktop input denied until user restored access",
+    "Local Error Report dialog dismissed using Don't send"
+  ],
+  "installed_binary_modified": false,
+  "vehicle_connected": false,
+  "registration_state_left_in_place": true,
+  "pretest_config_backup": "local/backup/IT3UserCustom.ini (gitignored)"
+}

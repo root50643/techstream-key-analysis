@@ -1,0 +1,36 @@
+Window: "Techstream (Ver 18.00.008)", App: MainMenu.exe.
+	0 視窗 Techstream (Ver 18.00.008) Secondary Actions: Raise
+		1 按鈕 Connect to Vehicle ID: 1000
+		2 按鈕 Open Scan Data File ID: 1001
+		3 按鈕 Launch WSI ID: 1002
+		4 按鈕 Generic OBD II ID: 1005
+		5 按鈕 Software Registration ID: 1006
+		6 按鈕 User Selection ID: 1007
+		7 文字 Ver 18.00.008 ID: 1013
+		8 按鈕 Log Out ID: 1008
+		9 按鈕 Language Selection ID: 1009
+		10 文字 Subscription Expiration ID: 1014
+		11 文字 29d 23h 58m ID: 1015
+		12 按鈕 Advanced Function ID: 1010
+		13 狀態列 ID: 59393
+			14 文字 S200-01
+			15 文字 
+			16 文字 VIM - TIS Techstream VIM
+			17 文字 
+			18 文字 Default User
+			19 文字 
+		20 標題列 (settable, string) Value: Techstream (Ver 18.00.008)
+			21 功能表列 系統 ID: MenuBar
+				40 功能表項目 系統
+			23 按鈕 最小化
+			24 按鈕 最大化
+			25 按鈕 關閉
+		26 功能表列 應用程式 ID: MenuBar
+			41 功能表項目 File
+			42 功能表項目 Function
+			43 功能表項目 Setup
+			44 功能表項目 WSI
+			45 功能表項目 User
+			46 功能表項目 Help
+
+The focused UI element is 1 按鈕 Connect to Vehicle ID: 1000.
