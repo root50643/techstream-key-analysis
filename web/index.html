@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="純前端 Techstream New Key 計算器，可調整 Software ID、版本、地區、有效天數與產生時間。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="theme-color" content="#173b32">
+  <title>Techstream · New Key 產生器</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Techstream Key Lab 首頁"><span class="brand-mark" aria-hidden="true">t<span>k</span></span><span>TECHSTREAM<span class="brand-caption">KEY LAB</span></span></a>
+      <nav aria-label="專案連結">
+        <a href="https://github.com/root50643/techstream-key-analysis/blob/main/docs/report.zh-TW.md" target="_blank" rel="noopener noreferrer">分析報告 <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/root50643/techstream-key-analysis" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> BROWSER-LOCAL UTILITY</p>
+          <h1 id="page-title">你的 Software ID，<br>一組新的 <span>New Key。</span></h1>
+          <p class="intro-copy">調整參數，立即計算。所有運算都在你的瀏覽器完成，<br class="desktop-break">輸入資料不會傳送至伺服器。</p>
+        </div>
+        <div class="version-note"><span class="version-number">18<span>.00.008</span></span><span>反編譯分析依據版本</span><span class="version-regions">OT <i>·</i> NA <i>·</i> EU</span></div>
+      </section>
+
+      <div class="workspace">
+        <section class="parameter-card" aria-labelledby="parameter-title">
+          <div class="card-heading"><div><p class="section-number">01 / CONFIGURE</p><h2 id="parameter-title">輸入參數</h2></div><button id="load-example" class="text-button" type="button">載入實測範例 <span aria-hidden="true">↗</span></button></div>
+          <form id="key-form" novalidate>
+            <div class="field">
+              <label for="software-id">Software ID <span class="field-meta">32 位十六進位</span></label>
+              <input id="software-id" name="softwareId" class="mono id-input" type="text" maxlength="32" placeholder="輸入你的 Software ID" autocomplete="off" autocapitalize="characters" spellcheck="false" required aria-describedby="software-id-help software-id-error">
+              <p id="software-id-help" class="field-help">從 Techstream 的 Software Registration 畫面複製。</p>
+              <p id="software-id-error" class="field-error" hidden></p>
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="version">軟體版本</label>
+                <input id="version" name="version" class="mono" type="text" value="18.00.008" placeholder="18.00.008" autocomplete="off" spellcheck="false" required aria-describedby="version-help version-error">
+                <p id="version-help" class="field-help">以主要版本號參與計算。</p>
+                <p id="version-error" class="field-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="region">地區</label>
+                <select id="region" name="region" aria-describedby="region-help region-error"><option value="OT">OT · 其他地區</option><option value="NA">NA · 北美</option><option value="EU">EU · 歐洲</option></select>
+                <p id="region-help" class="field-help">JP 使用不同排列，目前未提供。</p>
+                <p id="region-error" class="field-error" hidden></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="days">有效天數 <span class="field-meta">1–9999</span></label>
+              <div class="days-row"><div class="input-unit"><input id="days" name="days" class="mono" type="number" min="1" max="9999" step="1" value="30" inputmode="numeric" required aria-describedby="days-help days-error"><span aria-hidden="true">天</span></div><div class="day-presets" aria-label="快速設定天數"><button type="button" data-days="1" aria-pressed="false">1 天</button><button type="button" data-days="30" aria-pressed="true">30 天</button><button type="button" data-days="365" aria-pressed="false">365 天</button></div></div>
+              <p id="days-help" class="field-help">此為金鑰欄位範圍，實際可用期限由程式判定。</p>
+              <p id="days-error" class="field-error" hidden></p>
+            </div>
+            <div class="field">
+              <div class="field-label-row"><label for="issued">產生時間</label><button id="use-now" class="text-button label-action" type="button">使用現在 <span aria-hidden="true">↺</span></button></div>
+              <input id="issued" name="issued" class="mono" type="datetime-local" min="2000-01-01T00:00" max="2037-12-31T23:59" step="60" required aria-describedby="issued-help issued-error">
+              <p id="issued-help" class="field-help">使用裝置的本機時間，不做時區轉換。年份上限為 2037。</p>
+              <p id="issued-error" class="field-error" hidden></p>
+            </div>
+            <p id="form-error" class="form-error" role="alert" hidden></p>
+            <button class="generate-button" type="submit">產生 New Key <span aria-hidden="true">→</span></button>
+            <p class="local-note"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 9V6a4 4 0 0 1 8 0v3M5 9h10v8H5z"/></svg>本機計算 · 無需帳號 · 無第三方連線</p>
+          </form>
+        </section>
+
+        <div class="result-column">
+          <section id="result-card" class="result-card" data-state="idle" aria-labelledby="result-title">
+            <div class="card-heading"><div><p class="section-number">02 / RESULT</p><h2 id="result-title">你的 New Key</h2></div><span id="result-badge" class="result-badge">等待輸入</span></div>
+            <div id="result-empty" class="result-empty"><svg viewBox="0 0 120 72" aria-hidden="true"><circle cx="31" cy="36" r="21"/><circle cx="31" cy="36" r="7"/><path d="M52 36h57m-17 0v14H80V36m-13 0v8"/></svg><p id="empty-title">準備好，就開始計算。</p><p id="empty-description">填入左側參數，或載入實測範例。</p></div>
+            <div id="result-content" hidden>
+              <label for="new-key" class="result-label">46-CHARACTER REGISTRATION KEY</label>
+              <textarea id="new-key" class="key-output mono" rows="3" readonly spellcheck="false" aria-describedby="key-format"></textarea>
+              <div id="key-format" class="key-format"><span><i class="digest-dot"></i>摘要 32 碼</span><span><i class="days-dot"></i>天數 4 碼</span><span><i class="time-dot"></i>時間 10 碼</span></div>
+              <button id="copy-key" class="copy-button" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="11" rx="2"/><path d="M12 7V3H3v10h4"/></svg><span id="copy-label">複製金鑰</span></button>
+              <dl class="result-metadata"><div><dt>地區</dt><dd id="result-region">—</dd></div><div><dt>主要版本</dt><dd id="result-version">—</dd></div><div><dt>有效天數</dt><dd id="result-days">—</dd></div></dl>
+              <div class="result-time"><span>時間欄位</span><code id="result-issued">—</code></div>
+            </div>
+            <p id="result-status" class="result-status" role="status" aria-live="polite">調整任何參數後，請重新產生金鑰。</p>
+          </section>
+
+          <details id="calculation-details" class="details-card"><summary>查看計算明細 <span aria-hidden="true">＋</span></summary><div class="details-content"><p id="details-placeholder">產生金鑰後，可在這裡查看每一階段的輸入與摘要。</p><div id="details-values" hidden><p class="detail-step">STAGE 01 · MD5</p><p class="detail-caption">Software ID + 主要版本</p><code id="stage1-input" class="detail-code"></code><p class="detail-caption">第一階段摘要</p><code id="stage1-hash" class="detail-code"></code><p class="detail-step">STAGE 02 · MD5</p><p class="detail-caption">地區常數</p><code id="region-value" class="detail-code"></code><p class="detail-caption">第一階段摘要 + 地區常數 + 天數 + 時間</p><code id="stage2-input" class="detail-code"></code><p class="detail-caption">第二階段摘要</p><code id="stage2-hash" class="detail-code"></code><button id="download-json" class="download-button" type="button" disabled>下載計算結果 JSON <span aria-hidden="true">↓</span></button></div></div></details>
+          <aside class="scope-note"><span aria-hidden="true">ⓘ</span><p><strong>關於驗證範圍</strong>OT 已完成 18.00.008 註冊畫面實測；NA／EU 已比對原生 DLL 摘要。其他版本與所有期限尚未逐一實測。</p></aside>
+        </div>
+      </div>
+      <noscript><p class="noscript-note">請啟用 JavaScript，才能在瀏覽器計算金鑰。</p></noscript>
+    </main>
+
+    <footer><span>TECHSTREAM KEY LAB <span class="footer-divider">/</span> 純前端計算工具</span><a href="https://github.com/root50643/techstream-key-analysis/blob/main/docs/report.zh-TW.md" target="_blank" rel="noopener noreferrer">閱讀演算法與實測報告 <span aria-hidden="true">↗</span></a></footer>
+  </div>
+</body>
+</html>

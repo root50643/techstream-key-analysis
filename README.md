@@ -9,6 +9,21 @@
 - [計算範例與實測金鑰](examples/reference-vector.json)
 - [GUI 成功截圖](evidence/runtime/gui-success.jpg)
 - [本機 DLL 測試結果](evidence/runtime/native-results.json)
+- [網頁版 New Key 產生器](https://root50643.github.io/techstream-key-analysis/)
+
+## 網頁版
+
+[開啟 GitHub Pages 計算器](https://root50643.github.io/techstream-key-analysis/)。Software ID、版本、OT／NA／EU 地區、天數及本機產生時間均可調整，支援複製金鑰、載入實測範例、查看兩階段摘要及下載 JSON。修改參數後會清除舊結果，避免複製到不對應的金鑰。
+
+網頁位於 `web/`，使用原生 HTML／CSS／JavaScript，無建置步驟、第三方套件或外部字型。MD5 在瀏覽器本機執行，不呼叫後端、不傳送輸入資料、不使用分析追蹤或瀏覽器儲存。時間欄位直接採用輸入的本機時間，沒有 UTC 轉換。
+
+```powershell
+python -m http.server 4173 --bind 127.0.0.1 --directory web
+# 開啟 http://127.0.0.1:4173
+node --test tests/web.test.mjs
+```
+
+GitHub Pages 使用 `.github/workflows/pages.yml` 自動部署 `web/`；部署前會比對 Python 參考結果與 9 組原生 DLL 向量。首次設定需在儲存庫 Pages 設定選擇 **GitHub Actions** 作為來源。
 
 ## 快速使用
 
@@ -24,7 +39,7 @@ python -m unittest discover -s tests -v
 
 ```text
 techstream-key-analysis/
-├── .github/workflows/       Python CI
+├── .github/workflows/       Python／JavaScript CI、GitHub Pages 部署
 ├── docs/                   繁體中文分析報告、重跑說明
 ├── evidence/static/        函式位址、反編譯 C、組合語言、SHA-256
 ├── evidence/runtime/       原生測試 JSON、測試輸出、GUI 截圖與文字
@@ -33,6 +48,7 @@ techstream-key-analysis/
 ├── scripts/                Ghidra 匯出、x86 原生比對、PDF 建置
 ├── src/techstream_keys/     無第三方相依的 Python 計算器
 ├── tests/                  固定向量、輸入邊界及竄改測試
+├── web/                    純前端 New Key 產生器
 └── local/                  本機樣本、工具專案、備份；Git 忽略
 ```
 

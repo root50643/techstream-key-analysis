@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / "evidence/artifact-sha256.json"
 SKIP = {".git", "local", "tmp", "__pycache__", ".venv", "build", "dist"}
-TEXT = {".md", ".py", ".ps1", ".cs", ".java", ".c", ".txt", ".json", ".toml", ".yml"}
+TEXT = {".md", ".py", ".ps1", ".cs", ".java", ".c", ".txt", ".json", ".toml", ".yml", ".html", ".css", ".js", ".mjs", ".svg"}
 records = {}
 for parent, dirs, files in os.walk(ROOT):
     dirs[:] = sorted(d for d in dirs if d not in SKIP and not d.endswith(".egg-info"))
